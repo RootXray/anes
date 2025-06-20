@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بطاقة فيزا وهمية</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to right, #232526, #414345);
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    .card {
+      background: #1c1c1c;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      max-width: 350px;
+      margin: auto;
+      display: none;
+    }
+    button {
+      background: #00ffcc;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #00ccaa;
+    }
+    .hidden-text {
+      filter: blur(8px);
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>بطاقة فيزا مجانية</h1>
+  <p>اضغط على الزر أدناه لعرض تفاصيل البطاقة</p>
+
+  <button onclick="revealCard()">عرض التفاصيل</button>
+
+  <div class="card" id="card">
+    <h2>💳 بطاقة فيزا</h2>
+    <p>الرقم: <span class="hidden-text">4916 3456 7890 1234</span></p>
+    <p>الانتهاء: <span class="hidden-text">12/29</span></p>
+    <p>CVV: <span class="hidden-text">789</span></p>
+  </div>
+
+  <script>
+    function revealCard() {
+      // ✅ تقدر تخلي الزائر يروح للرابط المختصر قبل ما تظهر البيانات
+      window.open("https://tpi.li/fq5Bw", "_blank"); // رابطك المختصر
+
+      // بعد الضغط على الرابط يظهر الكارت
+      document.getElementById("card").style.display = "block";
+      const hidden = document.querySelectorAll('.hidden-text');
+      hidden.forEach(e => {
+        e.style.filter = 'none';
+        e.style.userSelect = 'text';
+      });
+    }
+  </script>
+
+</body>
+</html>
